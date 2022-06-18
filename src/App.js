@@ -7,11 +7,11 @@ import Crypto from "./components/Crypto";
 
 function App() {
   return (
-    <div className="App min-h-screen max-h-screen">
+    <div className="App">
       <Navbar />
       <div
         style={{
-          height: "94vh",
+          minHeight: "94vh",
         }}
         className="flex flex-row"
       >

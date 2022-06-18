@@ -9,7 +9,7 @@ const Index = () => {
   useEffect(() => {
     const fetch = async () => {
       const data = await fetchCurrency();
-      console.log(data);
+      // console.log(data);
       setRow(data);
     };
     fetch();
