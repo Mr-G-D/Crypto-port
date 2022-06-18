@@ -5,13 +5,18 @@ import Navbar from "./components/Navbar";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App min-h-screen max-h-screen">
       <Navbar />
-      <div className="flex flex-row h-screen">
-        <div className="basis-1/6 bg-sky-500">
+      <div
+        style={{
+          height: "94vh",
+        }}
+        className="flex flex-row"
+      >
+        <div className="basis-1/4 bg-sky-500">
           <Sidebar />
         </div>
-        <div className="flex-grow">
+        <div className="flex-grow bg-slate-200">
           <Dashboard />
         </div>
       </div>
