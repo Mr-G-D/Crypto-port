@@ -56,6 +56,7 @@ const Index = () => {
           paginationRowsPerPageOptions={[10, 15, 20, 50]}
           highlightOnHover
           pointerOnHover
+          responsive
         />
       </div>
     </div>

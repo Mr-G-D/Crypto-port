@@ -2,7 +2,7 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <div className="my-5">
+    <div className="my-5 fixed">
       <div
         onClick={() => {
           window.location.href = "/";
