@@ -2,7 +2,6 @@ import { fetchCurrency } from "../Api";
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
 
-let count = 1;
 const Index = () => {
   const [row, setRow] = useState();
 
@@ -16,23 +15,49 @@ const Index = () => {
   }, []);
 
   const columns = [
-    { name: "ID", selector: () => count++, maxWidth: "70px" },
     {
-      name: "Symbol",
+      name: "Market Rank",
+      selector: (row) => row?.market_data?.market_cap_rank,
+    },
+    { name: "Name", selector: (row) => row.name },
+    {
+      name: "Icon",
       selector: (row) => {
         return <img src={row.image.thumb} alt="icon" />;
       },
-      maxWidth: "90px",
     },
-    { name: "Name", selector: (row) => row.name, maxWidth: "120px" },
     {
       name: "US Dollars",
-      selector: (row) => row?.market_data?.current_price?.usd,
+      selector: (row) => `$${row?.market_data?.current_price?.usd}`,
+      center: "true",
+    },
+    {
+      name: "24h Price Change",
+      selector: (row) => row?.market_data?.price_change_24h,
+      center: "true",
+    },
+    {
+      name: "24h Market Cap Change (USD)",
+      selector: (row) =>
+        `${row?.market_data?.market_cap_change_24h_in_currency?.usd}$`,
+      center: "true",
     },
   ];
   return (
-    <div>
-      <DataTable sortServer columns={columns} data={row} pagination />
+    <div id="graph" className="m-4 px-4">
+      <div className="rounded-xl bg-white">
+        <DataTable
+          subHeaderAlign="center"
+          sortServer
+          sortIcon
+          columns={columns}
+          data={row}
+          pagination
+          paginationRowsPerPageOptions={[10, 15, 20, 50]}
+          highlightOnHover
+          pointerOnHover
+        />
+      </div>
     </div>
   );
 };
