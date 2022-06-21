@@ -4,6 +4,7 @@ import Dashboard from "./components/Dashboard";
 import Navbar from "./components/Navbar";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Crypto from "./components/Crypto";
+import Data from "components/Data";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Dashboard />} />
               <Route exact path="/all" element={<Crypto />} />
+              <Route exact path="/:id" element={<Data />} />
             </Routes>
           </BrowserRouter>
         </div>

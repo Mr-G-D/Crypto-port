@@ -7,7 +7,6 @@ const Dashboard = () => {
   useEffect(() => {
     const fetch = async () => {
       const res = await fetchCurrency();
-      console.log(res[0]);
       setData(res);
     };
     fetch();
@@ -19,7 +18,8 @@ const Dashboard = () => {
         {data?.map((ele) => {
           return (
             <Block
-              key={ele.id}
+              key={ele?.id}
+              id={ele?.id}
               name={ele?.name}
               src={ele?.image?.small}
               low={ele?.market_data?.low_24h?.usd}
