@@ -7261,6 +7261,11 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
+react-chartjs-2@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/react-chartjs-2/-/react-chartjs-2-4.2.0.tgz#bc5693a8b161f125301cf28ab0fe980d7dce54aa"
+  integrity sha512-9Vm9Sg9XAKiR579/FnBkesofjW9goaaFLfS7XlGTzUJlWFZGSE6A/pBI6+i/bP3pobKZoFcWJdFnjShytToqXw==
+
 react-data-table-component@^7.5.2:
   version "7.5.2"
   resolved "https://registry.yarnpkg.com/react-data-table-component/-/react-data-table-component-7.5.2.tgz#42d0af2a923e05887baadf8f4718bbb133c6db83"
