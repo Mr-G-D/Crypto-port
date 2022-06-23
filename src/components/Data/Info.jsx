@@ -54,7 +54,7 @@ const Info = (props) => {
             <p
               dangerouslySetInnerHTML={{
                 __html: data
-                  ? data?.description?.en.slice(0, 1000)
+                  ? data?.description?.en.slice(0, 999)
                   : "Loading...",
               }}
               className="leading-relaxed text-lg mb-4"
