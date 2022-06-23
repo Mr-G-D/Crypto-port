@@ -30,17 +30,23 @@ const Info = (props) => {
                 {data ? data.name : "Loading..."}
               </h2>
               <div className="w-12 h-1 bg-indigo-500 rounded mt-2 mb-4" />
-              <div className="text-base flex justify-between">
-                <p className="font-semibold mx-4">Rank :</p>{" "}
-                {data ? data?.market_cap_rank : "Loading..."}
-              </div>
-              <div className="text-base flex justify-between">
-                <p className="font-semibold mx-4">Current Price :</p>{" "}
-                {data ? data?.market_data?.current_price?.usd : "Loading..."}
-              </div>
-              <div className="text-base flex justify-between">
-                <p className="font-semibold mx-4">Total Volume :</p>{" "}
-                {data ? data?.total_volume[data?.symbol] : "Loading..."}
+              <div className="grid gap-4">
+                <div className="text-base flex justify-between">
+                  <p className="font-semibold mr-1">Rank :</p>{" "}
+                  {data ? data?.market_cap_rank : "Loading..."}
+                </div>
+                <div className="text-base flex justify-between">
+                  <p className="font-semibold mr-1 ">Current Price :</p>{" "}
+                  {data
+                    ? "$" + data?.market_data?.current_price?.usd
+                    : "Loading..."}
+                </div>
+                <div className="text-base flex justify-between">
+                  <p className="font-semibold mr-1 ">Total Volume :</p>{" "}
+                  {data
+                    ? "$" + data?.market_data?.total_volume?.usd
+                    : "Loading..."}
+                </div>
               </div>
             </div>
           </div>

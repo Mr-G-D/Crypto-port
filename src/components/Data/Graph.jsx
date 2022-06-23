@@ -34,7 +34,7 @@ const Graph = (props) => {
             {
               id: 1,
               borderColor: "red",
-              label: "",
+              label: "Market Value (USD)",
               data: price,
             },
           ],
