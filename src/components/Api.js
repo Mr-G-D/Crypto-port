@@ -23,3 +23,16 @@ export const fetchHistory = async (id) => {
     console.log("empty");
   }
 };
+
+export const fetchData = async (id) => {
+  const response = await axios.get(
+    `https://api.coingecko.com/api/v3/coins/${id}`,
+  );
+  if (response) {
+    // success
+    const json = response.data;
+    return json;
+  } else {
+    console.log("empty");
+  }
+};

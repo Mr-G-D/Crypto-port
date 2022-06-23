@@ -1,9 +1,12 @@
+import { Chart, registerables } from "chart.js";
 import { fetchHistory } from "components/Api";
 import dayjs from "dayjs";
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
 
 const Graph = (props) => {
+  Chart.register(...registerables);
+
   const [data, setData] = useState([]);
   const [price, setPrice] = useState([]);
 
@@ -22,23 +25,21 @@ const Graph = (props) => {
   }, [props.id]);
 
   return (
-    <div id="graph" className="m-4 px-4">
-      <div className="rounded-xl bg-white">
-        <Line
-          datasetIdKey="id"
-          data={{
-            labels: data,
-            datasets: [
-              {
-                id: 1,
-                borderColor: "red",
-                label: "",
-                data: price,
-              },
-            ],
-          }}
-        />
-      </div>
+    <div className="lg:w-full md:w-9/12 sm:3/12">
+      <Line
+        datasetIdKey="id"
+        data={{
+          labels: data,
+          datasets: [
+            {
+              id: 1,
+              borderColor: "red",
+              label: "",
+              data: price,
+            },
+          ],
+        }}
+      />
     </div>
   );
 };
